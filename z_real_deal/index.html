@@ -71,6 +71,7 @@
     <link rel="stylesheet" href="./slider.css" type="text/css"/>
 
     <script>
+      window.onload = function() {prediction_title(); build_vis('./datas/2018_1.csv');}
       function prediction_title() {          
         var header = document.getElementById("current_data");
         header.innerHTML = "January 2018: the future";
