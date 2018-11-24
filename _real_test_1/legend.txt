@@ -1,0 +1,21 @@
+-year
+-month
+County
+Facilities Sending Samples
+Received Samples at Lab
+Total Test Valid Outcomes
+Total Test Valid Outcomes gt 1000
+-Female tests
+-Female tests gt 1000
+-Male tests
+-Male tests gt 1000
+-Suppression Routine VL tests
+-Suppression Confirmatory Repeat tests
+Suppression Total Test Valid Outcomes
+Suppression Female tests
+Suppression Male tests
+-Province
+-Population
+-Latitude (move to before county)
+Rainfall
+Maize_price
