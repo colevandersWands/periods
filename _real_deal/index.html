@@ -116,12 +116,12 @@ function build_vis(data_file) {
       .alphaOnBrushed(0.2)
       .mode("default")
       //.height(d3.max([document.body.clientHeight-326, 220]))
-      .height(1350)  
+      .height(800)  
       .margin({
         top: 70,
         left: 110,
         right: 0,
-        bottom: 16
+        bottom: 30
       })
       .color(function(d) { return blue_to_red(d[color_column]); })
 
