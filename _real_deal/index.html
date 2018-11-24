@@ -281,18 +281,18 @@ function build_vis(data_file) {
           .style("fill", "darkorange")
           .style("stroke", "#000")
           .style("stroke-width", "0.5px")
-          .on('mouseover', function(d, i) {
+          .on('click', function(d, i) {
                d3.selectAll(".county").style('fill-opacity', .5);
                d3.select(this).style('fill-opacity', 1);
                row = get_data_for_county(d.properties.COUNTY);
                update_parcoords_with_row(row);
                update_grid_with_data([row])
            })
-          .on('mouseout', function(d, i) {
-               parcoords.unhighlight();
-               update_map();
-               update_grid();
-          });
+          // .on('ondblclick', function(d, i) {
+          //      parcoords.unhighlight();
+          //      update_map();
+          //      update_grid();
+          // });
       });
 
       // highlight map on brush
