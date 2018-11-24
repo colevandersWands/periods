@@ -21,7 +21,8 @@
 <script src="../lib/d3.parcoords.js"></script>
 <script src="../lib/divgrid.js"></script>
 <script src="../lib/sylvester.js"></script>
-<button type="button" onclick="build_vis('./datas/2015_1.csv')">Jan 2015</button> 
+
+<!-- <button type="button" onclick="build_vis('./datas/2015_1.csv')">Jan 2015</button> 
 <button type="button" onclick="build_vis('./datas/2015_2.csv')">Feb 2015</button>
 <button type="button" onclick="build_vis('./datas/2015_3.csv')">Mar 2015</button> 
 <button type="button" onclick="build_vis('./datas/2015_4.csv')">Apr 2015</button>
@@ -58,6 +59,71 @@
 <button type="button" onclick="build_vis('./datas/2017_11.csv')">Nov 2017</button> 
 <button type="button" onclick="build_vis('./datas/2017_12.csv')">Dec 2017</button>
 <button type="button" onclick="build_vis('./datas/2018_1.csv')">Jan 2018</button>
+    -->
+    <button type="button"style="float:right;" onclick="prediction_title(); build_vis('./datas/2018_1.csv');">Prediction: Jan 2018</button>
+
+    <h1 id="current_data"></h1> 
+
+    <div class="slidecontainer">
+      <input type="range" min="1" max="36" value="1" class="slider" id="myRange">
+    </div>
+
+    <link rel="stylesheet" href="./slider.css" type="text/css"/>
+
+    <script>
+      function prediction_title() {          
+        var header = document.getElementById("current_data");
+        header.innerHTML = "January 2018: the future";
+      }
+      var slider = document.getElementById("myRange");
+
+      // Update the current slider value (each time you drag the slider handle)
+      slider.oninput = function() {
+          var slider_map = [
+            './datas/2015_1.csv',
+            './datas/2015_2.csv',
+            './datas/2015_3.csv',
+            './datas/2015_4.csv',
+            './datas/2015_5.csv',
+            './datas/2015_6.csv',
+            './datas/2015_7.csv',
+            './datas/2015_8.csv',
+            './datas/2015_9.csv',
+            './datas/2015_10.csv',
+            './datas/2015_11.csv',
+            './datas/2015_12.csv',
+            './datas/2016_1.csv',
+            './datas/2016_2.csv',
+            './datas/2016_3.csv',
+            './datas/2016_4.csv',
+            './datas/2016_5.csv',
+            './datas/2016_6.csv',
+            './datas/2016_7.csv',
+            './datas/2016_8.csv',
+            './datas/2016_9.csv',
+            './datas/2016_10.csv',
+            './datas/2016_11.csv',
+            './datas/2016_12.csv',
+            './datas/2017_1.csv',
+            './datas/2017_2.csv',
+            './datas/2017_3.csv',
+            './datas/2017_4.csv',
+            './datas/2017_5.csv',
+            './datas/2017_6.csv',
+            './datas/2017_7.csv',
+            './datas/2017_8.csv',
+            './datas/2017_9.csv',
+            './datas/2017_10.csv',
+            './datas/2017_11.csv',
+            './datas/2017_12.csv'
+          ];
+          var data_set = slider_map[this.value];
+          build_vis(data_set);
+          var header = document.getElementById("current_data");
+          header.innerHTML = data_set.slice(8);
+      }
+  
+    </script>
 <div id="map"></div>
 <div id="grid"></div>
 <div id="parcoords" class="parcoords"></div>
